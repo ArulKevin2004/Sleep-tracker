@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sleep Data</title>
+    <style>
+        table {
+            text-align: center;
+            width: 100%;
+            border-collapse: collapse;
+            padding: auto;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sleep Data</h1>
+    <p><a href="/logout">Logout</a></p>
+    <a href="/new_entry" class="new-entry-button">New Entry</a>
+
+    <table>
+        <tr>
+            <th>Serial No</th>
+            <th>Date</th>
+            <th>Sleep Time</th>
+            <th>Wakeup Time</th>
+            <th>Sleep Duration (Hours)</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in data %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[5]}}</td>
+                <td><a href="/edit_entry/{{i[0]}}">Edit</a></td>
+                <td><a href="/delete_entry/{{i[0]}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

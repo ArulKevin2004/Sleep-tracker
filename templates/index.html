@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sleep Tracker - Login</title>
+</head>
+<body>
+    <h1>Sleep Tracker - Login</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="post" action="/login">
+        <label for="username">Username : </label>
+        <input type="text" name="username" required><br><br>
+
+        <label for="password">Password : </label>
+        <input type="password" name="password" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <p>New user? <a href="/register">Register here</a></p>
+</body>
+</html>
